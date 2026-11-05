@@ -1,0 +1,10 @@
+﻿# Datos (descargar desde Kaggle)
+data/*
+!data/.gitkeep
+*.csv
+
+# Sistema / editores
+Thumbs.db
+.DS_Store
+.vscode/
+.dbeaver/
