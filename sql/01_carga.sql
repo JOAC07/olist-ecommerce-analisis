@@ -2,10 +2,13 @@
 -- 01_carga.sql
 -- Importación de los CSV a PostgreSQL (base: olist)
 -- =============================================
--- 8 tablas se importaron con el asistente de DBeaver (Importar datos -> CSV).
--- La tabla de reviews se creó manualmente porque los comentarios
--- contienen comillas y saltos de línea, y se importó con pgAdmin
--- (Import/Export: csv, header, quote ", escape ", UTF8).
+-- 5 tablas se importaron con el asistente de DBeaver (Importar datos -> CSV):
+--   orders, order_payments, products, sellers, product_category_name_translation.
+-- 4 tablas se importaron con pgAdmin (Import/Export: csv, header, quote ", escape ", UTF8):
+--   order_reviews, customers, order_items, geolocation.
+-- Motivo: el importador de DBeaver falló con la tabla de reviews (comentarios con
+-- comillas y saltos de línea) y se interrumpió la carga de las tablas restantes.
+-- La tabla de reviews se creó manualmente con tipos text para evitar límites de longitud.
 
 DROP TABLE IF EXISTS olist_order_reviews_dataset;
 
